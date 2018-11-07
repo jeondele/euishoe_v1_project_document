@@ -144,7 +144,7 @@ CREATE TABLE customers
      customer_height      VARCHAR2(10) 
   ); 
   
-
+select * from customers;
 /* 9. 리뷰(reviews) 테이블 생성 */
 CREATE TABLE reviews 
   ( 
