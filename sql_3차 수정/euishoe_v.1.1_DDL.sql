@@ -35,7 +35,7 @@ drop sequence product_list_num_seq;
 drop sequence product_infos_seq;  
 drop sequence reviews_seq;
 drop sequence payments_seq;
-drop sequence imags_seq;
+drop sequence images_seq;
 drop sequence qnas_seq;
 drop sequence comments_seq;
 drop sequence wishlists_seq;
@@ -141,10 +141,14 @@ CREATE TABLE customers
      customer_gender      CHAR(1), 
      customer_jacket_size VARCHAR2(10), 
      customer_pants_size  VARCHAR2(10), 
-     customer_height      VARCHAR2(10) 
+     customer_height      VARCHAR2(10),
+     customer_body        NUMBER(1),
+     customer_shoulder    NUMBER(1),
+     customer_arm         NUMBER(1),
+     customer_leg         NUMBER(1)
   ); 
   
-select * from customers;
+
 /* 9. 리뷰(reviews) 테이블 생성 */
 CREATE TABLE reviews 
   ( 
@@ -266,7 +270,15 @@ CREATE TABLE product_infos
      product_release_date      DATE, 
      product_origin            VARCHAR2(50), 
      product_list_price        NUMBER(10), 
-     color_code                VARCHAR2(15) 
+     color_code                VARCHAR2(15),
+     product_hitcount          NUMBER(1) default 0,
+     product_body              NUMBER(1) default 2,
+     product_shoulder          NUMBER(1) default 2,
+     product_arm               NUMBER(1) default 2,
+     product_leg               NUMBER(1) default 2,
+     product_season            VARCHAR2(10),
+     product_fabric            VARCHAR2(10),
+     product_tpo               VARCHAR2(10)
   ); 
 
 
