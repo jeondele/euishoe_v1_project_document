@@ -418,7 +418,11 @@ INSERT INTO customers
              customer_gender,
              customer_jacket_size,
              customer_pants_size,
-             customer_height) 
+             customer_height,
+             customer_body,
+             customer_shoulder,
+             customer_arm,
+             customer_leg) 
 VALUES     ('abc1234', 
             '박호준', 
             '1234', 
@@ -430,7 +434,11 @@ VALUES     ('abc1234',
             'M',
             'XL',
             '32',
-            '180'); 
+            '180',
+            1,
+            1,
+            1,
+            1); 
             
 
             
@@ -446,7 +454,11 @@ INSERT INTO customers
              customer_gender,
              customer_jacket_size,
              customer_pants_size,
-             customer_height) 
+             customer_height,
+             customer_body,
+             customer_shoulder,
+             customer_arm,
+             customer_leg)
 VALUES     ('bongus', 
             '봉구스', 
             '1234', 
@@ -458,7 +470,11 @@ VALUES     ('bongus',
             'F',
             'L',
             '30',
-            '178'); 
+            '178',
+            1,
+            1,
+            1,
+            1);  
             
             
 
@@ -474,7 +490,11 @@ INSERT INTO customers
              customer_gender,
              customer_jacket_size,
              customer_pants_size,
-             customer_height) 
+             customer_height,
+             customer_body,
+             customer_shoulder,
+             customer_arm,
+             customer_leg)
 VALUES     ('abc1235', 
             '관리자1', 
             '4567', 
@@ -486,7 +506,11 @@ VALUES     ('abc1235',
             'M',
             'XXL',
             '34',
-            '190'); 
+            '190',
+            1,
+            1,
+            1,
+            1); 
 
 
 
@@ -502,7 +526,11 @@ INSERT INTO customers
              customer_gender,
              customer_jacket_size,
              customer_pants_size,
-             customer_height)
+             customer_height,
+             customer_body,
+             customer_shoulder,
+             customer_arm,
+             customer_leg)
 VALUES     ('bangry', 
             '김기정', 
             '1958', 
@@ -514,7 +542,11 @@ VALUES     ('bangry',
             'F',
             'M',
             '28',
-            '164');
+            '164',
+            1,
+            1,
+            1,
+            1);
             
 
             
@@ -530,7 +562,11 @@ INSERT INTO customers
              customer_gender,
              customer_jacket_size,
              customer_pants_size,
-             customer_height)
+             customer_height,
+             customer_body,
+             customer_shoulder,
+             customer_arm,
+             customer_leg)
 VALUES     ('admin3', 
             '관리자3', 
             '1028', 
@@ -542,8 +578,11 @@ VALUES     ('admin3',
             'M',
             'M',
             '30',
-            '169');
-            
+            '169',
+            1,
+            1,
+            1,
+            1); 
 
 INSERT INTO customers 
             (customer_id, 
@@ -557,7 +596,11 @@ INSERT INTO customers
              customer_gender,
              customer_jacket_size,
              customer_pants_size,
-             customer_height)
+             customer_height,
+             customer_body,
+             customer_shoulder,
+             customer_arm,
+             customer_leg)
 VALUES     ('admin4', 
             '관리자4', 
             '1953', 
@@ -569,7 +612,11 @@ VALUES     ('admin4',
             'M',
             'L',
             '32',
-            '170');
+            '170',
+            1,
+            1,
+            1,
+            1); 
             
 
 
@@ -585,7 +632,11 @@ INSERT INTO customers
              customer_gender,
              customer_jacket_size,
              customer_pants_size,
-             customer_height)
+             customer_height,
+             customer_body,
+             customer_shoulder,
+             customer_arm,
+             customer_leg)
 VALUES     ('admin5', 
             '관리자5', 
             '9203', 
@@ -597,9 +648,14 @@ VALUES     ('admin5',
             'M',
             'XL',
             '30',
-            '185');
+            '185',
+            1,
+            1,
+            1,
+            1); 
             
             
+commit;
 -------------------- 결제(payments) 테이블 샘플 데이터 추가 ---------------------
 
 

@@ -141,7 +141,11 @@ CREATE TABLE customers
      customer_gender      CHAR(1), 
      customer_jacket_size VARCHAR2(10), 
      customer_pants_size  VARCHAR2(10), 
-     customer_height      VARCHAR2(10) 
+     customer_height      VARCHAR2(10),
+     customer_body        NUMBER(1),
+     customer_shoulder    NUMBER(1),
+     customer_arm         NUMBER(1),
+     customer_leg         NUMBER(1)
   ); 
   
 select * from customers;
