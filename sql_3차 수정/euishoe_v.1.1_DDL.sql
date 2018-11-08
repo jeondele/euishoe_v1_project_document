@@ -199,7 +199,8 @@ CREATE TABLE products
      product_code  VARCHAR2(40), 
      jacket_code   VARCHAR2(10), 
      pants_code    VARCHAR2(10), 
-     product_num   NUMBER(10)
+     product_num   NUMBER(10),
+     product_count NUMBER(2)
   ); 
 
 
