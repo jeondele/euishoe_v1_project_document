@@ -59,7 +59,7 @@ CREATE TABLE point_policies
 /* 2. 포인트이력(point_histories) 테이블 생성 */
 CREATE TABLE point_histories 
   ( 
-     point_history_num         VARCHAR2(30), 
+     point_history_num         NUMBER(30), 
      point_policy_type         NUMBER(10), 
      customer_id               VARCHAR2(40), 
      point_history_score       NUMBER(15), 
@@ -154,7 +154,7 @@ CREATE TABLE reviews
   ( 
      review_num       NUMBER(10), 
      customer_id      VARCHAR2(40), 
-     product_code     VARCHAR2(20), 
+     product_num     NUMBER(10), 
      review_title     VARCHAR2(50), 
      review_content   VARCHAR2(200), 
      review_score     NUMBER(1), 
@@ -167,7 +167,7 @@ CREATE TABLE reviews
 CREATE TABLE carts 
   ( 
      cart_num     NUMBER(10), 
-     product_code VARCHAR2(20), 
+     product_num     NUMBER(10), 
      customer_id  VARCHAR2(40) 
   ); 
 
@@ -177,7 +177,7 @@ CREATE TABLE wishlists
   ( 
      wishlist_num NUMBER(15), 
      customer_id  VARCHAR2(40), 
-     product_code VARCHAR2(20) 
+     product_num     NUMBER(10)
   ); 
 
 
@@ -196,11 +196,10 @@ CREATE TABLE comments
 /* 13. 상품(products) 테이블 생성 */
 CREATE TABLE products 
   ( 
-     product_code  VARCHAR2(20), 
+     product_code  VARCHAR2(40), 
      jacket_code   VARCHAR2(10), 
      pants_code    VARCHAR2(10), 
-     product_num   NUMBER(10), 
-     product_count NUMBER(10) 
+     product_num   NUMBER(10)
   ); 
 
 
@@ -215,7 +214,8 @@ CREATE TABLE color_codes
 /* 15. 상의(jackets) 테이블 생성 */
 CREATE TABLE jackets 
   ( 
-     jacket_code  VARCHAR2(10), 
+     jacket_code  VARCHAR2(10),
+     color_code VARCHAR2(15),
      size_code    VARCHAR2(15), 
      jacket_count NUMBER(10) 
   ); 
@@ -250,7 +250,7 @@ CREATE TABLE qnas
 CREATE TABLE images 
   ( 
      image_num    NUMBER(10), 
-     product_code VARCHAR2(20), 
+     product_num     NUMBER(10), 
      review_num   NUMBER(10), 
      qna_num      NUMBER(10), 
      image_ref    VARCHAR2(800)
@@ -261,6 +261,7 @@ CREATE TABLE images
 CREATE TABLE product_infos 
   ( 
      product_num               NUMBER(10), 
+     color_code                VARCHAR2(15),
      product_list_num          NUMBER(10), 
      product_name              VARCHAR(40), 
      product_cost              NUMBER(10), 
@@ -270,7 +271,6 @@ CREATE TABLE product_infos
      product_release_date      DATE, 
      product_origin            VARCHAR2(50), 
      product_list_price        NUMBER(10), 
-     color_code                VARCHAR2(15),
      product_hitcount          NUMBER(1) default 0,
      product_body              NUMBER(1) default 2,
      product_shoulder          NUMBER(1) default 2,
@@ -286,6 +286,7 @@ CREATE TABLE product_infos
 CREATE TABLE pants 
   ( 
      pants_code  VARCHAR2(10), 
+     color_code VARCHAR2(15),
      size_code   VARCHAR2(15), 
      pants_count NUMBER(10) 
   ); 
@@ -442,8 +443,8 @@ ALTER TABLE reviews
   REFERENCES customers(customer_id);
 
 ALTER TABLE reviews
-  ADD CONSTRAINT reviews_fk2 FOREIGN KEY(product_code)
-  REFERENCES products(product_code);
+  ADD CONSTRAINT reviews_fk2 FOREIGN KEY(product_num)
+  REFERENCES product_infos(product_num);
 
 
 /* 상품주문(order_by_products) 테이블 제약사항 변경(Foreign Key 추가) */
@@ -458,8 +459,8 @@ ALTER TABLE order_by_products
 
 /* 장바구니(carts) 테이블 제약사항 변경(Foreign Key 추가) */
 ALTER TABLE carts
-  ADD CONSTRAINT carts_fk1 FOREIGN KEY(product_code)
-  REFERENCES products(product_code);
+  ADD CONSTRAINT carts_fk1 FOREIGN KEY(product_num)
+  REFERENCES product_infos(product_num);
 
 ALTER TABLE carts
   ADD CONSTRAINT carts_fk2 FOREIGN KEY(customer_id)
@@ -472,8 +473,8 @@ ALTER TABLE wishlists
   REFERENCES customers(customer_id);
 
 ALTER TABLE wishlists
-  ADD CONSTRAINT wishlists_fk2 FOREIGN KEY(product_code)  
-  REFERENCES products(product_code);
+  ADD CONSTRAINT wishlists_fk2 FOREIGN KEY(product_num)  
+  REFERENCES product_infos(product_num);
 
 
 /* 댓글(comments) 테이블 제약사항 변경(Foreign Key 추가) */
@@ -503,8 +504,8 @@ ALTER TABLE qnas
 
 /* 이미지(images) 테이블 제약사항 변경(Foreign Key 추가) */
 ALTER TABLE images
-  ADD CONSTRAINT images_fk1 FOREIGN KEY(product_code)
-  REFERENCES products(product_code);
+  ADD CONSTRAINT images_fk1 FOREIGN KEY(product_num)
+  REFERENCES product_infos(product_num);
 
 ALTER TABLE images
   ADD CONSTRAINT images_fk2 FOREIGN KEY(review_num)
