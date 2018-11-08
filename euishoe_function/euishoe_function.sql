@@ -355,14 +355,27 @@ WHERE  cart_num = ?
 -- no.35 비회원 장바구니 서비스 이용(DB 미활용)
 
 -- no.36 고객이 상품 목록 페이지, 상품 상세 페이지에서 원하는 상품을 위시리스트에 담습니다
-INSERT INTO carts 
+INSERT INTO wishlists 
             (wishlist_num, 
              customer_id, 
-             product_code) 
+             product_num)
+VALUES     (wishlist_num_seq.nextval, 
+            'bangry', 
+            3);
+
+create trigger certifyWishlist
+on wishlists
+before insert
+as
+
+select * from wishlists;
+INSERT INTO wishlists
+            (wishlist_num, 
+             customer_id, 
+             product_num) 
 VALUES     (?, 
             ?, 
             ?); 
-
 -- no.37 비회원 위시리스트 서비스 이용(DB 미활용)
 
 -- no.38 고객이 위시리스트에서 상품 삭제
