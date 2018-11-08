@@ -363,25 +363,49 @@ VALUES     (wishlist_num_seq.nextval,
             'bangry', 
             3);
 
-create trigger certifyWishlist
-on wishlists
-before insert
-as
+ 
+--no.37 1) 체크
+SELECT wishlist_num "wishlistNum"
+		FROM   wishlists 
+		WHERE  customer_id = 'bangry' 
+       	   AND product_num = 3;
 
-select * from wishlists;
-INSERT INTO wishlists
-            (wishlist_num, 
-             customer_id, 
-             product_num) 
-VALUES     (?, 
-            ?, 
-            ?); 
--- no.37 비회원 위시리스트 서비스 이용(DB 미활용)
+select * from product_infos;
+
+--wishlist에 해당하는 product_info 가져오기
+select wl.product_num,
+       color_code, 
+       product_list_num,
+       product_name,
+       product_cost,
+       product_price,
+       product_brief_information,
+       product_manufacturer,
+       product_release_date,
+       product_origin,
+       product_list_price,
+       product_hitcount,
+       product_body,
+       product_shoulder,
+       product_arm,
+       product_leg,
+       product_season,
+       product_fabric,
+       product_tpo
+From (SELECT wishlist_num ,
+			   customer_id ,
+			   product_num  
+		FROM   wishlists 
+		WHERE  customer_id = 'bangry') wl join product_infos pi
+    on wl.product_num = pi.product_num;
+
+
+
 
 -- no.38 고객이 위시리스트에서 상품 삭제
-DELETE FROM carts 
-WHERE  wishlist_num = ? 
-       AND customer_id = ?; 
+DELETE FROM wishlists 
+WHERE  customer_id = 'bangry' 
+       AND product_num = 3; 
 
 -- no.39 회원 상품 주문, 위시리스트 페이지에서 항목 선택 후 삭제 버튼 클릭
 /*
