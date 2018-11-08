@@ -78,7 +78,7 @@ FROM   product_infos pi
                                Avg(r.review_score) avg_score 
                         FROM   reviews r 
                                join products p 
-                                 ON r.product_code = p.product_code 
+                                 ON r.product_num = p.product_num 
                         GROUP  BY p.product_num) rs 
                     ON pi.product_num = rs.product_num 
 WHERE  product_list_num IS NOT NULL)) 
@@ -147,7 +147,7 @@ FROM   product_infos pi
                                Avg(r.review_score) avg_score 
                         FROM   reviews r 
                                join products p 
-                                 ON r.product_code = p.product_code 
+                                 ON r.product_num = p.product_num 
                         GROUP  BY p.product_num) rs 
                     ON pi.product_num = rs.product_num 
 WHERE  product_list_num IS NOT NULL 
@@ -204,7 +204,7 @@ SELECT product_num,
        color_code, 
        product_hitcount 
 FROM   product_infos 
-WHERE  product_tpo = 'bizcasual'; 
+WHERE  product_tpo = 'silk'; 
 --WHERE  product_tpo = ?;
 
 --no.15 소재별
@@ -249,7 +249,7 @@ SELECT product_num,
        color_code, 
        product_hitcount 
 FROM   product_infos 
-WHERE  product_body = 1; 
+WHERE  product_body = '2'; 
 --WHERE  product_body = ?;
 
 --no.20 상품리스트에 올라와 있는 상품들 중에 최신순으로 검색 (다중필터 적용 예정)
@@ -285,7 +285,7 @@ SELECT product_num,
 FROM   product_infos 
 WHERE  product_name LIKE CONCAT('%',product_name,'%')
 ORDER BY product_release_date DESC;
-
+select * from product_infos;
 -- no.24 Best Product,New Product에서 더 보기
 SELECT product_num, 
        product_list_num, 
@@ -299,7 +299,7 @@ SELECT product_num,
        product_hitcount 
 FROM   product_infos 
 WHERE  ROWNUM <= 4
-ORDER BY point_hitcount DESC;
+ORDER BY product_hitcount DESC;
 
 SELECT product_num, 
        product_list_num, 
@@ -333,10 +333,11 @@ FROM   carts c
        INNER JOIN products p 
                ON c.product_code = p.product_code 
        INNER JOIN images i 
-               ON p.product_code = i.product_code 
+               ON p.product_num = i.product_num 
        INNER JOIN product_infos pi 
                ON p.product_num = pi.product_num; 
-     
+select * from carts;  
+select * from products;
 -- no.33 고객이 상품 QuickView 페이지, 상품 상세 페이지에서 원하는 상품을 장바구니에 담습니다
 INSERT INTO carts 
             (cart_num, 
@@ -649,7 +650,7 @@ FROM   carts c
        INNER JOIN products p 
                ON c.product_code = p.product_code 
        INNER JOIN images i 
-               ON p.product_code = i.product_code 
+               ON p.product_num = i.product_num
        INNER JOIN product_infos pi 
                ON p.product_num = pi.product_num 
 WHERE  c.customer_id LIKE ?; 
@@ -670,7 +671,7 @@ FROM   wishlists w
        INNER JOIN products p 
                ON w.product_code = p.product_code 
        INNER JOIN images i 
-               ON p.product_code = i.product_code 
+               ON p.product_num = i.product_num
        INNER JOIN product_infos pi 
                ON p.product_num = pi.product_num 
 WHERE  w.customer_id LIKE ?; 
@@ -711,7 +712,7 @@ FROM   carts c
        INNER JOIN products p 
                ON c.cart_num = p.cart_num 
        INNER JOIN images i 
-               ON p.product_code = i.product_code 
+               ON p.product_num = i.product_num
        INNER JOIN product_infos pi 
                ON p.product_num = pi.product_num 
 WHERE  pi.product_num = ?; 
@@ -732,7 +733,7 @@ FROM   carts c
        INNER JOIN products p 
                ON c.cart_num = p.cart_num 
        INNER JOIN images i 
-               ON p.product_code = i.product_code 
+               ON p.product_num = i.product_num
        INNER JOIN product_infos pi 
                ON p.product_num = pi.product_num 
 WHERE  pi.product_season LIKE ? 
@@ -757,7 +758,7 @@ FROM   carts c
        INNER JOIN products p 
                ON c.cart_num = p.cart_num 
        INNER JOIN images i 
-               ON p.product_code = i.product_code 
+               ON p.product_num = i.product_num 
        INNER JOIN product_infos pi 
                ON p.product_num = pi.product_num 
 WHERE p.product_code LIKE ?; 
@@ -778,7 +779,7 @@ FROM   carts c
        INNER JOIN products p 
                ON c.cart_num = p.cart_num 
        INNER JOIN images i 
-               ON p.product_code = i.product_code 
+               ON p.product_num = i.product_num
        INNER JOIN product_infos pi 
                ON p.product_num = pi.product_num 
 WHERE  p.product_code LIKE ?;
@@ -794,9 +795,9 @@ SELECT review_num,
        review_isdeleted 
 FROM   reviews r 
        INNER JOIN products p 
-               ON r.product_code = p.product_code 
+               ON r.product_num = p.product_num
 WHERE  product_code LIKE ?; 
-
+select * from products;
 --no.52 product page 내에서 상품 문의 보여주는 기능(???)
 SELECT review_num, 
        customer_id, 
@@ -808,7 +809,7 @@ SELECT review_num,
        review_isdeleted 
 FROM   qnas q 
        INNER JOIN products p 
-               ON q.product_code = p.product_code 
+               ON q.product_num = p.product_num 
 WHERE  product_code LIKE ?; 
 
 --no.53 사용자가 쇼핑몰 전반적인 내용에 대해 문의할 수 있는 문의사항 보여주는 기능

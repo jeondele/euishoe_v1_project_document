@@ -875,9 +875,7 @@ VALUES      ('bbb%xl%28%bl',
              'bbb%28%bl',
              4,
              3);
-
-select * from pants;
-select * from product_infos;             
+          
 INSERT INTO products 
             (product_code, 
              jacket_code, 
@@ -1129,7 +1127,6 @@ VALUES      (order_by_products_seq.NEXTVAL,
              
 ------------------- 장바구니(carts) 테이블 샘플 데이터 추가 ---------------------
 
-select * from products;
 INSERT INTO carts(cart_num, 
              product_code, 
              customer_id) 
@@ -1406,7 +1403,7 @@ VALUES      (images_seq.nextval,
 
 INSERT INTO images 
             (image_num, 
-             product_code, 
+             product_num, 
              review_num, 
              qna_num, 
              image_ref) 
@@ -1419,7 +1416,7 @@ VALUES      (images_seq.nextval,
 
 INSERT INTO images 
             (image_num, 
-             product_code, 
+             product_num, 
              review_num, 
              qna_num, 
              image_ref) 

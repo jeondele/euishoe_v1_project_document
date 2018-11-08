@@ -276,9 +276,9 @@ CREATE TABLE product_infos
      product_shoulder          NUMBER(1) default 2,
      product_arm               NUMBER(1) default 2,
      product_leg               NUMBER(1) default 2,
-     product_season            VARCHAR2(10),
-     product_fabric            VARCHAR2(10),
-     product_tpo               VARCHAR2(10)
+     product_season            VARCHAR2(10) default 'OV',
+     product_fabric            VARCHAR2(10) default 'silk',
+     product_tpo               VARCHAR2(10) default 'bizcasual'
   ); 
 
 
