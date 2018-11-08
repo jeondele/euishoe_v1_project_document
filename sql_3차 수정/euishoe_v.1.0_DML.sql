@@ -255,76 +255,77 @@ VALUES     ('36',
 
 
 INSERT INTO jackets 
-            (jacket_code, 
+            (jacket_code,
+             color_code,
              size_code, 
              jacket_count) 
-VALUES     ('aaa_j', 
+VALUES     ('aaa%fr%bl',
+            'BL',
             'FREE', 
             40); 
 
 INSERT INTO jackets 
-            (jacket_code, 
+            (jacket_code,
+             color_code,
              size_code, 
              jacket_count) 
-VALUES     ('bbb_j', 
-            'FREE', 
-            23); 
-
-INSERT INTO jackets 
-            (jacket_code, 
-             size_code, 
-             jacket_count) 
-VALUES     ('ccc_j', 
-            'FREE', 
-            23); 
-
-INSERT INTO jackets 
-            (jacket_code, 
-             size_code, 
-             jacket_count) 
-VALUES     ('ddd_j', 
-            'FREE', 
-            23); 
-
-INSERT INTO jackets 
-            (jacket_code, 
-             size_code, 
-             jacket_count) 
-VALUES     ('eee_j', 
-            'FREE', 
-            23); 
-
-INSERT INTO jackets 
-            (jacket_code, 
-             size_code, 
-             jacket_count) 
-VALUES     ('fff_j', 
-            'FREE', 
-            23); 
-
-INSERT INTO jackets 
-            (jacket_code, 
-             size_code, 
-             jacket_count) 
-VALUES     ('ggg_j', 
+VALUES     ('bbb%xl%bl',
+            'BL',
             'XL', 
-            23); 
+            40); 
 
 INSERT INTO jackets 
-            (jacket_code, 
+            (jacket_code,
+             color_code,
              size_code, 
              jacket_count) 
-VALUES     ('iii_j', 
-            'L', 
-            23); 
+VALUES     ('ccc%fr%gr',
+            'GR',
+            'FREE', 
+            40); 
+
 
 INSERT INTO jackets 
-            (jacket_code, 
+            (jacket_code,
+             color_code,
              size_code, 
              jacket_count) 
-VALUES     ('kkk_j', 
-            'S', 
-            23); 
+VALUES     ('ddd%fr%bl',
+            'BL',
+            'FREE', 
+            40); 
+
+
+INSERT INTO jackets 
+            (jacket_code,
+             color_code,
+             size_code, 
+             jacket_count) 
+VALUES     ('eee%fr%gr',
+            'GR',
+            'FREE', 
+            40); 
+
+INSERT INTO jackets 
+            (jacket_code,
+             color_code,
+             size_code, 
+             jacket_count) 
+VALUES     ('fff%fr%gr',
+            'GR',
+            'FREE', 
+            40);  
+
+INSERT INTO jackets 
+            (jacket_code,
+             color_code,
+             size_code, 
+             jacket_count) 
+VALUES     ('fff%x%gr',
+            'GR',
+            'X', 
+            40); 
+
 
 
 ---------------------- 하의(pants) 테이블 샘플 데이터 추가 ----------------------

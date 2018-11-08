@@ -167,7 +167,7 @@ CREATE TABLE reviews
 CREATE TABLE carts 
   ( 
      cart_num     NUMBER(10), 
-     product_num     NUMBER(10), 
+     product_code     VARCHAR2(20), 
      customer_id  VARCHAR2(40) 
   ); 
 
@@ -459,8 +459,8 @@ ALTER TABLE order_by_products
 
 /* 장바구니(carts) 테이블 제약사항 변경(Foreign Key 추가) */
 ALTER TABLE carts
-  ADD CONSTRAINT carts_fk1 FOREIGN KEY(product_num)
-  REFERENCES product_infos(product_num);
+  ADD CONSTRAINT carts_fk1 FOREIGN KEY(product_code)
+  REFERENCES products(product_code);
 
 ALTER TABLE carts
   ADD CONSTRAINT carts_fk2 FOREIGN KEY(customer_id)
