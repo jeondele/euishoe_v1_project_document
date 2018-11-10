@@ -285,7 +285,7 @@ SELECT product_num,
 FROM   product_infos 
 WHERE  product_name LIKE CONCAT('%',product_name,'%')
 ORDER BY product_release_date DESC;
-select * from product_infos;
+
 -- no.24 Best Product,New Product에서 더 보기
 SELECT product_num, 
        product_list_num, 
@@ -336,8 +336,7 @@ FROM   carts c
                ON p.product_num = i.product_num 
        INNER JOIN product_infos pi 
                ON p.product_num = pi.product_num; 
-select * from carts;  
-select * from products;
+
 -- no.33 고객이 상품 QuickView 페이지, 상품 상세 페이지에서 원하는 상품을 장바구니에 담습니다
 INSERT INTO carts 
             (cart_num, 
@@ -370,7 +369,6 @@ SELECT wishlist_num "wishlistNum"
 		WHERE  customer_id = 'bangry' 
        	   AND product_num = 3;
 
-select * from product_infos;
 
 --wishlist에 해당하는 product_info 가져오기
 select wl.product_num,
@@ -428,7 +426,7 @@ VALUES     (deliveries_seq.nextval,
             '20181109', 
             '20181112', 
             '배송중'); 
-select * from DELIVERIES;
+
 INSERT INTO payments 
             (payment_num, 
              payment_point, 

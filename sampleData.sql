@@ -443,7 +443,7 @@ VALUES     ('mbs$jk$l$bg',
             'L',
             139);
 INSERT INTO jackets
-VALUES     ('mbs$jk$l$bg',
+VALUES     ('mbs$jk$xl$bg',
             'BG',
             'XL',
             119);
@@ -834,6 +834,7 @@ ALTER TABLE product_infos
 ALTER TABLE product_infos 
   MODIFY(product_name VARCHAR2(50)); 
 -- 상품코드sts
+
 INSERT INTO product_infos 
             (product_num, 
              product_list_num, 
@@ -1759,6 +1760,7 @@ VALUES     (images_seq.NEXTVAL,
             24, 
 '/iceland/images/모던 비엘 싱글수트(Beige)/mbs$24$detail$2.jpg'); 
 ------------------------------------------------------------------
+
 INSERT INTO images 
             (image_num, 
              product_num, 
