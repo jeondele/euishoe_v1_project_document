@@ -1,5 +1,19 @@
 select product_num from product_infos;
 select * from color_codes;
+--기존 테이블 데이터 삭제 및 시퀀스 초기화
+--상품정보 시퀀스 삭제
+drop sequence product_infos_seq;
+--상품정보 테이블의 모든 데이터 삭제
+delete from images;
+delete from ORDER_BY_PRODUCTS;
+delete from WISHLISTS;
+delete from carts;
+delete from products;
+delete from comments;
+delete from reviews;
+delete from product_infos;
+
+
 
 -- 컬러코드
 select * from color_codes;
@@ -443,7 +457,7 @@ VALUES     ('mbs$jk$l$bg',
             'L',
             139);
 INSERT INTO jackets
-VALUES     ('mbs$jk$xl$bg',
+VALUES     ('mbs$jk$l$bg',
             'BG',
             'XL',
             119);
@@ -834,7 +848,11 @@ ALTER TABLE product_infos
 ALTER TABLE product_infos 
   MODIFY(product_name VARCHAR2(50)); 
 -- 상품코드sts
-
+create SEQUENCE product_infos_seq
+start with 1
+INCREMENT by 1
+NOMAXVALUE 
+  NOMINVALUE; 
 INSERT INTO product_infos 
             (product_num, 
              product_list_num, 
@@ -1369,762 +1387,761 @@ INSERT INTO images
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            11, 
-'/iceland/images/티피워모 싱글수트(BlueGreen)/sts_blgr$11$main$1.jpg'); 
+            1, 
+'/iceland/images/SS티피워모 싱글수트(BlueGreen)/sts_blgr$1$main$1.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            11, 
-'/iceland/images/티피워모 싱글수트(BlueGreen)/sts_blgr$11$main$2.jpg'); 
+            1, 
+'/iceland/images/SS티피워모 싱글수트(BlueGreen)/sts_blgr$1$main$2.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            11, 
-'/iceland/images/티피워모 싱글수트(BlueGreen)/sts_blgr$11$main$3.jpg'); 
+            1, 
+'/iceland/images/SS티피워모 싱글수트(BlueGreen)/sts_blgr$1$main$3.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            11, 
-'/iceland/images/티피워모 싱글수트(BlueGreen)/sts_blgr$11$detail$1.jpg'); 
+            1, 
+'/iceland/images/SS티피워모 싱글수트(BlueGreen)/sts_blgr$1$detail$1.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            11, 
-'/iceland/images/티피워모 싱글수트(BlueGreen)/sts_blgr$11$detail$2.jpg'); 
+            1, 
+'/iceland/images/SS티피워모 싱글수트(BlueGreen)/sts_blgr$1$detail$2.jpg'); 
 ------------------------------------------
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            12, 
-'/iceland/images/FW옴므 싱글수트(Black)/hss_bk$12$main$1.jpg'); 
+            2, 
+'/iceland/images/FW옴므 싱글수트(Black)/hss_bk$2$main$1.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            12, 
-'/iceland/images/FW옴므 싱글수트(Black)/hss_bk$12$main$2.jpg'); 
+            2, 
+'/iceland/images/FW옴므 싱글수트(Black)/hss_bk$2$main$2.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            12, 
-'/iceland/images/FW옴므 싱글수트(Black)/hss_bk$12$main$3.jpg'); 
+            2, 
+'/iceland/images/FW옴므 싱글수트(Black)/hss_bk$2$main$3.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            12, 
-'/iceland/images/FW옴므 싱글수트(Black)/hss_bk$12$detail$1.jpg'); 
+            2, 
+'/iceland/images/FW옴므 싱글수트(Black)/hss_bk$2$detail$1.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            12, 
-'/iceland/images/FW옴므 싱글수트(Black)/hss_bk$12$detail$2.jpg'); 
+            2, 
+'/iceland/images/FW옴므 싱글수트(Black)/hss_bk$2$detail$2.jpg'); 
 --------------------------------------
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            13, 
-'/iceland/images/바론 글렌체크 싱글수트(Brown)/bgs_br$13$main$1.jpg'); 
+            3, 
+'/iceland/images/바론 글렌체크 싱글수트(Brown)/bgs_br$3$main$1.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            13, 
-'/iceland/images/바론 글렌체크 싱글수트(Brown)/bgs_br$13$main$2.jpg'); 
+            3, 
+'/iceland/images/바론 글렌체크 싱글수트(Brown)/bgs_br$3$main$2.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            13, 
-'/iceland/images/바론 글렌체크 싱글수트(Brown)/bgs_br$13$main$3.jpg'); 
+            3, 
+'/iceland/images/바론 글렌체크 싱글수트(Brown)/bgs_br$3$main$3.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            13, 
-'/iceland/images/바론 글렌체크 싱글수트(Brown)/bgs_br$13$detail$1.jpg'); 
+            3, 
+'/iceland/images/바론 글렌체크 싱글수트(Brown)/bgs_br$3$detail$1.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            13, 
-'/iceland/images/바론 글렌체크 싱글수트(Brown)/bgs_br$13$detail$2.jpg'); 
+            3, 
+'/iceland/images/바론 글렌체크 싱글수트(Brown)/bgs_br$3$detail$2.jpg'); 
 --------------------------------------
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            14, 
-'/iceland/images/바론 글렌체크 싱글수트(Gray)/bgs_gr$14$main$1.jpg'); 
+            4, 
+'/iceland/images/바론 글렌체크 싱글수트(Gray)/bgs_gr$4$main$1.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            14, 
-'/iceland/images/바론 글렌체크 싱글수트(Gray)/bgs_gr$14$main$2.jpg');
+            4, 
+'/iceland/images/바론 글렌체크 싱글수트(Gray)/bgs_gr$4$main$2.jpg');
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            14, 
-'/iceland/images/바론 글렌체크 싱글수트(Gray)/bgs_gr$14$main$3.jpg');
+            4, 
+'/iceland/images/바론 글렌체크 싱글수트(Gray)/bgs_gr$4$main$3.jpg');
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            14, 
-'/iceland/images/바론 글렌체크 싱글수트(Gray)/bgs_gr$14$detail$1.jpg'); 
+            4, 
+'/iceland/images/바론 글렌체크 싱글수트(Gray)/bgs_gr$4$detail$1.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            14, 
-'/iceland/images/바론 글렌체크 싱글수트(Gray)/bgs_gr$14$detail$2.jpg'); 
+            4, 
+'/iceland/images/바론 글렌체크 싱글수트(Gray)/bgs_gr$4$detail$2.jpg'); 
 --------------------------------------
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            17, 
-'/iceland/images/베이직 테일러드 싱글수트(Black)/bts_bk$17$main$1.jpg'); 
+            5, 
+'/iceland/images/베이직 테일러드 싱글수트(Black)/bts_bk$5$main$1.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            17, 
-'/iceland/images/베이직 테일러드 싱글수트(Black)/bts_bk$17$main$2.jpg'); 
+            5, 
+'/iceland/images/베이직 테일러드 싱글수트(Black)/bts_bk$5$main$2.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            17, 
-'/iceland/images/베이직 테일러드 싱글수트(Black)/bts_bk$17$main$3.jpg'); 
+            5, 
+'/iceland/images/베이직 테일러드 싱글수트(Black)/bts_bk$5$main$3.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            17, 
-'/iceland/images/베이직 테일러드 싱글수트(Black)/bts_bk$17$detail$1.jpg'); 
+            5, 
+'/iceland/images/베이직 테일러드 싱글수트(Black)/bts_bk$5$detail$1.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            17, 
-'/iceland/images/베이직 테일러드 싱글수트(Black)/bts_bk$17$detail$2.jpg'); 
+            5, 
+'/iceland/images/베이직 테일러드 싱글수트(Black)/bts_bk$5$detail$2.jpg'); 
 --------------------------------------
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            18, 
-'/iceland/images/아르노 싱글수트(Green)/ass_gr$18$main$1.jpg'); 
+            6, 
+'/iceland/images/아르노 싱글수트(Green)/ass_gr$6$main$1.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            18, 
-'/iceland/images/아르노 싱글수트(Green)/ass_gr$18$main$2.jpg'); 
+            6, 
+'/iceland/images/아르노 싱글수트(Green)/ass_gr$6$main$2.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            18, 
-'/iceland/images/아르노 싱글수트(Green)/ass_gr$18$main$3.jpg'); 
+            6, 
+'/iceland/images/아르노 싱글수트(Green)/ass_gr$6$main$3.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            18, 
-'/iceland/images/아르노 싱글수트(Green)/ass_gr$18$detail$1.jpg'); 
+            6, 
+'/iceland/images/아르노 싱글수트(Green)/ass_gr$6$detail$1.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            18, 
-'/iceland/images/아르노 싱글수트(Green)/ass_gr$18$detail$2.jpg'); 
+            6, 
+'/iceland/images/아르노 싱글수트(Green)/ass_gr$6$detail$2.jpg'); 
 --------------------------------------
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            19, 
-'/iceland/images/아스펜 스트라이프 더블수트(Navy)/asd_nv$19$main$1.jpg'); 
+            7, 
+'/iceland/images/아스펜 스트라이프 더블수트(Navy)/asd_nv$7$main$1.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            19, 
-'/iceland/images/아스펜 스트라이프 더블수트(Navy)/asd_nv$19$main$2.jpg'); 
+            7, 
+'/iceland/images/아스펜 스트라이프 더블수트(Navy)/asd_nv$7$main$2.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            19, 
-'/iceland/images/아스펜 스트라이프 더블수트(Navy)/asd_nv$19$main$3.jpg'); 
+            7, 
+'/iceland/images/아스펜 스트라이프 더블수트(Navy)/asd_nv$7$main$3.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            19, 
-'/iceland/images/아스펜 스트라이프 더블수트(Navy)/asd_nv$19$detail$1.jpg'); 
+            7, 
+'/iceland/images/아스펜 스트라이프 더블수트(Navy)/asd_nv$7$detail$1.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            19, 
-'/iceland/images/아스펜 스트라이프 더블수트(Navy)/asd_nv$19$detail$2.jpg'); 
+            7, 
+'/iceland/images/아스펜 스트라이프 더블수트(Navy)/asd_nv$7$detail$2.jpg'); 
 --------------------------------------
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            21, 
-'/iceland/images/패트릭 싱글수트(Navy)/pss_nv$21$main$1.jpg'); 
+            8, 
+'/iceland/images/패트릭 싱글수트(Navy)/pss_nv$8$main$1.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            21, 
-'/iceland/images/패트릭 싱글수트(Navy)/pss_nv$21$main$2.jpg'); 
+            8, 
+'/iceland/images/패트릭 싱글수트(Navy)/pss_nv$8$main$2.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            21, 
-'/iceland/images/패트릭 싱글수트(Navy)/pss_nv$21$main$3.jpg'); 
+            8, 
+'/iceland/images/패트릭 싱글수트(Navy)/pss_nv$8$main$3.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            21, 
-'/iceland/images/패트릭 싱글수트(Navy)/pss_nv$21$detail$1.jpg'); 
+            8, 
+'/iceland/images/패트릭 싱글수트(Navy)/pss_nv$8$detail$1.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            21, 
-'/iceland/images/패트릭 싱글수트(Navy)/pss_nv$21$detail$2.jpg'); 
+            8, 
+'/iceland/images/패트릭 싱글수트(Navy)/pss_nv$8$detail$2.jpg'); 
 ------------------------------------------------
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            22, 
-'/iceland/images/지팟 윈도우 체크 싱글수트(Gray)/gwcs_gr$22$main$1.jpg'); 
+            9, 
+'/iceland/images/지팟 윈도우 체크 싱글수트(Gray)/gwcs_gr$9$main$1.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            22, 
-'/iceland/images/지팟 윈도우 체크 싱글수트(Gray)/gwcs_gr$22$main$2.jpg'); 
+            9, 
+'/iceland/images/지팟 윈도우 체크 싱글수트(Gray)/gwcs_gr$9$main$2.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            22, 
-'/iceland/images/지팟 윈도우 체크 싱글수트(Gray)/gwcs_gr$22$main$3.jpg'); 
+            9, 
+'/iceland/images/지팟 윈도우 체크 싱글수트(Gray)/gwcs_gr$9$main$3.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            22, 
-'/iceland/images/지팟 윈도우 체크 싱글수트(Gray)/gwcs_gr$22$detail$1.jpg'); 
+            9, 
+'/iceland/images/지팟 윈도우 체크 싱글수트(Gray)/gwcs_gr$9$detail$1.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            22, 
-'/iceland/images/지팟 윈도우 체크 싱글수트(Gray)/gwcs_gr$22$detail$2.jpg'); 
+            9, 
+'/iceland/images/지팟 윈도우 체크 싱글수트(Gray)/gwcs_gr$9$detail$2.jpg'); 
 ------------------------------------------------
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            23, 
-'/iceland/images/아스펜 스트라이프 싱글수트(Navy)/ass_nv$23$main$1.jpg'); 
+            10, 
+'/iceland/images/아스펜 스트라이프 싱글수트(Navy)/ass_nv$10$main$1.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            23, 
-'/iceland/images/아스펜 스트라이프 싱글수트(Navy)/ass_nv$23$main$2.jpg'); 
+            10, 
+'/iceland/images/아스펜 스트라이프 싱글수트(Navy)/ass_nv$10$main$2.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            23, 
-'/iceland/images/아스펜 스트라이프 싱글수트(Navy)/ass_nv$23$main$3.jpg'); 
+            10, 
+'/iceland/images/아스펜 스트라이프 싱글수트(Navy)/ass_nv$10$main$3.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            23, 
-'/iceland/images/아스펜 스트라이프 싱글수트(Navy)/ass_nv$23$detail$1.jpg'); 
+            10, 
+'/iceland/images/아스펜 스트라이프 싱글수트(Navy)/ass_nv$10$detail$1.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            23, 
-'/iceland/images/아스펜 스트라이프 싱글수트(Navy)/ass_nv$23$detail$2.jpg'); 
+            10, 
+'/iceland/images/아스펜 스트라이프 싱글수트(Navy)/ass_nv$10$detail$2.jpg'); 
 ------------------------------------------------------------------
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            24, 
-'/iceland/images/모던 비엘 싱글수트(Beige)/mbs$24$main$1.jpg'); 
+            11, 
+'/iceland/images/모던 비엘 싱글수트(Beige)/mbs$1$main$1.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            24, 
-'/iceland/images/모던 비엘 싱글수트(Beige)/mbs$24$main$2.jpg'); 
+            11, 
+'/iceland/images/모던 비엘 싱글수트(Beige)/mbs$11$main$2.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            24, 
-'/iceland/images/모던 비엘 싱글수트(Beige)/mbs$24$main$3.jpg'); 
+            11, 
+'/iceland/images/모던 비엘 싱글수트(Beige)/mbs$11$main$3.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            24, 
-'/iceland/images/모던 비엘 싱글수트(Beige)/mbs$24$detail$1.jpg'); 
+            11, 
+'/iceland/images/모던 비엘 싱글수트(Beige)/mbs$11$detail$1.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            24, 
-'/iceland/images/모던 비엘 싱글수트(Beige)/mbs$24$detail$2.jpg'); 
-------------------------------------------------------------------
-
-INSERT INTO images 
-            (image_num, 
-             product_num, 
-             image_ref) 
-VALUES     (images_seq.NEXTVAL, 
-            25, 
-'/iceland/images/심플 그레이 보카시 수트(Gray)/sgb_gr$25$main$1.jpg'); 
-INSERT INTO images 
-            (image_num, 
-             product_num, 
-             image_ref) 
-VALUES     (images_seq.NEXTVAL, 
-            25, 
-'/iceland/images/심플 그레이 보카시 수트(Gray)/sgb_gr$25$main$2.jpg'); 
-INSERT INTO images 
-            (image_num, 
-             product_num, 
-             image_ref) 
-VALUES     (images_seq.NEXTVAL, 
-            25, 
-'/iceland/images/심플 그레이 보카시 수트(Gray)/sgb_gr$25$main$3.jpg'); 
-INSERT INTO images 
-            (image_num, 
-             product_num, 
-             image_ref) 
-VALUES     (images_seq.NEXTVAL, 
-            25, 
-'/iceland/images/심플 그레이 보카시 수트(Gray)/sgb_gr$25$detail$1.jpg'); 
-INSERT INTO images 
-            (image_num, 
-             product_num, 
-             image_ref) 
-VALUES     (images_seq.NEXTVAL, 
-            25, 
-'/iceland/images/심플 그레이 보카시 수트(Gray)/sgb_gr$25$detail$2.jpg'); 
-INSERT INTO images 
-            (image_num, 
-             product_num, 
-             image_ref) 
-VALUES     (images_seq.NEXTVAL, 
-            25, 
-'/iceland/images/심플 그레이 보카시 수트(Gray)/sgb_gr$25$detail$3.jpg'); 
-INSERT INTO images 
-            (image_num, 
-             product_num, 
-             image_ref) 
-VALUES     (images_seq.NEXTVAL, 
-            25, 
-'/iceland/images/심플 그레이 보카시 수트(Gray)/sgb_gr$25$detail$4.jpg'); 
-INSERT INTO images 
-            (image_num, 
-             product_num, 
-             image_ref) 
-VALUES     (images_seq.NEXTVAL, 
-            25, 
-'/iceland/images/심플 그레이 보카시 수트(Gray)/sgb_gr$25$detail$5.jpg'); 
-INSERT INTO images 
-            (image_num, 
-             product_num, 
-             image_ref) 
-VALUES     (images_seq.NEXTVAL, 
-            25, 
-'/iceland/images/심플 그레이 보카시 수트(Gray)/sgb_gr$25$detail$6.jpg'); 
+            11, 
+'/iceland/images/모던 비엘 싱글수트(Beige)/mbs$11$detail$2.jpg'); 
 ------------------------------------------------------------------
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            26, 
-'/iceland/images/데이지 아이보리 코튼수트(Ivory)/dic_iv$26$main$1.jpg'); 
+            12, 
+'/iceland/images/심플 그레이 보카시 수트(Gray)/sgb_gr$12$main$1.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            26, 
-'/iceland/images/데이지 아이보리 코튼수트(Ivory)/dic_iv$26$main$2.jpg'); 
+            12, 
+'/iceland/images/심플 그레이 보카시 수트(Gray)/sgb_gr$12$main$2.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            26, 
-'/iceland/images/데이지 아이보리 코튼수트(Ivory)/dic_iv$26$main$3.jpg'); 
+            12, 
+'/iceland/images/심플 그레이 보카시 수트(Gray)/sgb_gr$12$main$3.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            26, 
-'/iceland/images/데이지 아이보리 코튼수트(Ivory)/dic_iv$26$detail$1.jpg'); 
+            12, 
+'/iceland/images/심플 그레이 보카시 수트(Gray)/sgb_gr$12$detail$1.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            26, 
-'/iceland/images/데이지 아이보리 코튼수트(Ivory)/dic_iv$26$detail$2.jpg'); 
+            12, 
+'/iceland/images/심플 그레이 보카시 수트(Gray)/sgb_gr$12$detail$2.jpg'); 
+INSERT INTO images 
+            (image_num, 
+             product_num, 
+             image_ref) 
+VALUES     (images_seq.NEXTVAL, 
+            12, 
+'/iceland/images/심플 그레이 보카시 수트(Gray)/sgb_gr$12$detail$3.jpg'); 
+INSERT INTO images 
+            (image_num, 
+             product_num, 
+             image_ref) 
+VALUES     (images_seq.NEXTVAL, 
+            12, 
+'/iceland/images/심플 그레이 보카시 수트(Gray)/sgb_gr$12$detail$4.jpg'); 
+INSERT INTO images 
+            (image_num, 
+             product_num, 
+             image_ref) 
+VALUES     (images_seq.NEXTVAL, 
+            12, 
+'/iceland/images/심플 그레이 보카시 수트(Gray)/sgb_gr$12$detail$5.jpg'); 
+INSERT INTO images 
+            (image_num, 
+             product_num, 
+             image_ref) 
+VALUES     (images_seq.NEXTVAL, 
+            12, 
+'/iceland/images/심플 그레이 보카시 수트(Gray)/sgb_gr$12$detail$6.jpg'); 
 ------------------------------------------------------------------
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            27, 
-'/iceland/images/치르콜로 블랙 수트(Black)/ccb_bk$27$main$1.jpg'); 
+            13, 
+'/iceland/images/데이지 아이보리 코튼수트(Ivory)/dic_iv$13$main$1.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            27, 
-'/iceland/images/치르콜로 블랙 수트(Black)/ccb_bk$27$main$2.jpg'); 
+            13, 
+'/iceland/images/데이지 아이보리 코튼수트(Ivory)/dic_iv$13$main$2.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            27, 
-'/iceland/images/치르콜로 블랙 수트(Black)/ccb_bk$27$main$3.jpg'); 
+            13, 
+'/iceland/images/데이지 아이보리 코튼수트(Ivory)/dic_iv$13$main$3.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            27, 
-'/iceland/images/치르콜로 블랙 수트(Black)/ccb_bk$27$detail$1.jpg'); 
+            13, 
+'/iceland/images/데이지 아이보리 코튼수트(Ivory)/dic_iv$13$detail$1.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            27, 
-'/iceland/images/치르콜로 블랙 수트(Black)/ccb_bk$27$detail$2.jpg'); 
-INSERT INTO images 
-            (image_num, 
-             product_num, 
-             image_ref) 
-VALUES     (images_seq.NEXTVAL, 
-            27, 
-'/iceland/images/치르콜로 블랙 수트(Black)/ccb_bk$27$detail$3.jpg');
-INSERT INTO images 
-            (image_num, 
-             product_num, 
-             image_ref) 
-VALUES     (images_seq.NEXTVAL, 
-            27, 
-'/iceland/images/치르콜로 블랙 수트(Black)/ccb_bk$27$detail$4.jpg');
-INSERT INTO images 
-            (image_num, 
-             product_num, 
-             image_ref) 
-VALUES     (images_seq.NEXTVAL, 
-            27, 
-'/iceland/images/치르콜로 블랙 수트(Black)/ccb_bk$27$detail$5.jpg');
+            13, 
+'/iceland/images/데이지 아이보리 코튼수트(Ivory)/dic_iv$13$detail$2.jpg'); 
 ------------------------------------------------------------------
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            28, 
-'/iceland/images/로렌느 심플 싱글수트(Gray)/lss_gr$28$main$1.jpg'); 
+            14, 
+'/iceland/images/치르콜로 블랙 수트(Black)/ccb_bk$14$main$1.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            28, 
-'/iceland/images/로렌느 심플 싱글수트(Gray)/lss_gr$28$main$2.jpg'); 
+            14, 
+'/iceland/images/치르콜로 블랙 수트(Black)/ccb_bk$14$main$2.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            28, 
-'/iceland/images/로렌느 심플 싱글수트(Gray)/lss_gr$28$detail$1.jpg'); 
+            14, 
+'/iceland/images/치르콜로 블랙 수트(Black)/ccb_bk$14$main$3.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            28, 
-'/iceland/images/로렌느 심플 싱글수트(Gray)/lss_gr$28$detail$2.jpg'); 
+            14, 
+'/iceland/images/치르콜로 블랙 수트(Black)/ccb_bk$14$detail$1.jpg'); 
+INSERT INTO images 
+            (image_num, 
+             product_num, 
+             image_ref) 
+VALUES     (images_seq.NEXTVAL, 
+            14, 
+'/iceland/images/치르콜로 블랙 수트(Black)/ccb_bk$14$detail$2.jpg'); 
+INSERT INTO images 
+            (image_num, 
+             product_num, 
+             image_ref) 
+VALUES     (images_seq.NEXTVAL, 
+            14, 
+'/iceland/images/치르콜로 블랙 수트(Black)/ccb_bk$14$detail$3.jpg');
+INSERT INTO images 
+            (image_num, 
+             product_num, 
+             image_ref) 
+VALUES     (images_seq.NEXTVAL, 
+            14, 
+'/iceland/images/치르콜로 블랙 수트(Black)/ccb_bk$14$detail$4.jpg');
+INSERT INTO images 
+            (image_num, 
+             product_num, 
+             image_ref) 
+VALUES     (images_seq.NEXTVAL, 
+            14, 
+'/iceland/images/치르콜로 블랙 수트(Black)/ccb_bk$14$detail$5.jpg');
 ------------------------------------------------------------------
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            29, 
-'/iceland/images/FW어반 맨즈 싱글수트(Black)/ums_bk$29$main$1.jpg'); 
+            15, 
+'/iceland/images/로렌느 심플 싱글수트(Gray)/lss_gr$15$main$1.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            29, 
-'/iceland/images/FW어반 맨즈 싱글수트(Black)/ums_bk$29$main$2.jpg'); 
+            15, 
+'/iceland/images/로렌느 심플 싱글수트(Gray)/lss_gr$15$main$2.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            29, 
-'/iceland/images/FW어반 맨즈 싱글수트(Black)/ums_bk$29$main$3.jpg'); 
+            15, 
+'/iceland/images/로렌느 심플 싱글수트(Gray)/lss_gr$15$detail$1.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            29, 
-'/iceland/images/FW어반 맨즈 싱글수트(Black)/ums_bk$29$detail$1.jpg'); 
-INSERT INTO images 
-            (image_num, 
-             product_num, 
-             image_ref) 
-VALUES     (images_seq.NEXTVAL, 
-            29, 
-'/iceland/images/FW어반 맨즈 싱글수트(Black)/ums_bk$29$detail$2.jpg'); 
+            15, 
+'/iceland/images/로렌느 심플 싱글수트(Gray)/lss_gr$15$detail$2.jpg'); 
 ------------------------------------------------------------------
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            30, 
-'/iceland/images/FW어반 맨즈 싱글수트(Burgundy)/ums_bgd$30$main$1.jpg'); 
+            16, 
+'/iceland/images/FW어반 맨즈 싱글수트(Black)/ums_bk$16$main$1.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            30, 
-'/iceland/images/FW어반 맨즈 싱글수트(Burgundy)/ums_bgd$30$main$2.jpg'); 
+            16, 
+'/iceland/images/FW어반 맨즈 싱글수트(Black)/ums_bk$16$main$2.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            30, 
-'/iceland/images/FW어반 맨즈 싱글수트(Burgundy)/ums_bgd$30$main$3.jpg'); 
+            16, 
+'/iceland/images/FW어반 맨즈 싱글수트(Black)/ums_bk$16$main$3.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            30, 
-'/iceland/images/FW어반 맨즈 싱글수트(Burgundy)/ums_bgd$30$detail$1.jpg'); 
+            16, 
+'/iceland/images/FW어반 맨즈 싱글수트(Black)/ums_bk$16$detail$1.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            30, 
-'/iceland/images/FW어반 맨즈 싱글수트(Burgundy)/ums_bgd$30$detail$2.jpg'); 
+            16, 
+'/iceland/images/FW어반 맨즈 싱글수트(Black)/ums_bk$16$detail$2.jpg'); 
 ------------------------------------------------------------------
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            31, 
-'/iceland/images/르미 체크 싱글수트(Navy)/lcs_nv$31$main$1.jpg'); 
+            17, 
+'/iceland/images/FW어반 맨즈 싱글수트(Burgundy)/ums_bgd$17$main$1.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            31, 
-'/iceland/images/르미 체크 싱글수트(Navy)/lcs_nv$31$main$2.jpg'); 
+            17, 
+'/iceland/images/FW어반 맨즈 싱글수트(Burgundy)/ums_bgd$17$main$2.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            31, 
-'/iceland/images/르미 체크 싱글수트(Navy)/lcs_nv$31$main$3.jpg'); 
+            17, 
+'/iceland/images/FW어반 맨즈 싱글수트(Burgundy)/ums_bgd$17$main$3.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            31, 
-'/iceland/images/르미 체크 싱글수트(Navy)/lcs_nv$31$detail$1.jpg'); 
+            17, 
+'/iceland/images/FW어반 맨즈 싱글수트(Burgundy)/ums_bgd$17$detail$1.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            31, 
-'/iceland/images/르미 체크 싱글수트(Navy)/lcs_nv$31$detail$1.jpg'); 
+            17, 
+'/iceland/images/FW어반 맨즈 싱글수트(Burgundy)/ums_bgd$17$detail$2.jpg'); 
 ------------------------------------------------------------------
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            32, 
-'/iceland/images/마쉘 더블수트(Beige)/mds_bg$32$main$1.jpg'); 
+            18, 
+'/iceland/images/르미 체크 싱글수트(Navy)/lcs_nv$18$main$1.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            32, 
-'/iceland/images/마쉘 더블수트(Beige)/mds_bg$32$main$2.jpg'); 
+            18, 
+'/iceland/images/르미 체크 싱글수트(Navy)/lcs_nv$18$main$2.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            32, 
-'/iceland/images/마쉘 더블수트(Beige)/mds_bg$32$main$3.jpg'); 
+            18, 
+'/iceland/images/르미 체크 싱글수트(Navy)/lcs_nv$18$main$3.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            32, 
-'/iceland/images/마쉘 더블수트(Beige)/mds_bg$32$detail$1.jpg'); 
+            18, 
+'/iceland/images/르미 체크 싱글수트(Navy)/lcs_nv$18$detail$1.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            32, 
-'/iceland/images/마쉘 더블수트(Beige)/mds_bg$32$detail$2.jpg'); 
+            18, 
+'/iceland/images/르미 체크 싱글수트(Navy)/lcs_nv$18$detail$1.jpg'); 
 ------------------------------------------------------------------
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            33, 
-'/iceland/images/바론 글렌체크 싱글수트(Brown)/bgc_br$13$main$1.jpg'); 
+            19, 
+'/iceland/images/마쉘 더블수트(Beige)/mds_bg$19$main$1.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            33, 
-'/iceland/images/바론 글렌체크 싱글수트(Brown)/bgc_br$13$main$2.jpg'); 
+            19, 
+'/iceland/images/마쉘 더블수트(Beige)/mds_bg$19$main$2.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            33, 
-'/iceland/images/바론 글렌체크 싱글수트(Brown)/bgc_br$13$main$3.jpg'); 
+            19, 
+'/iceland/images/마쉘 더블수트(Beige)/mds_bg$19$main$3.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            33, 
-'/iceland/images/바론 글렌체크 싱글수트(Brown)/bgc_br$13$detail$1.jpg'); 
+            19, 
+'/iceland/images/마쉘 더블수트(Beige)/mds_bg$19$detail$1.jpg'); 
 INSERT INTO images 
             (image_num, 
              product_num, 
              image_ref) 
 VALUES     (images_seq.NEXTVAL, 
-            33, 
-'/iceland/images/바론 글렌체크 싱글수트(Brown)/bgc_br$13$detail$2.jpg'); 
+            19, 
+'/iceland/images/마쉘 더블수트(Beige)/mds_bg$19$detail$2.jpg'); 
+------------------------------------------------------------------
+INSERT INTO images 
+            (image_num, 
+             product_num, 
+             image_ref) 
+VALUES     (images_seq.NEXTVAL, 
+            20, 
+'/iceland/images/바론 글렌체크 싱글수트(Brown)/bgc_br$20$main$1.jpg'); 
+INSERT INTO images 
+            (image_num, 
+             product_num, 
+             image_ref) 
+VALUES     (images_seq.NEXTVAL, 
+            20, 
+'/iceland/images/바론 글렌체크 싱글수트(Brown)/bgc_br$20$main$2.jpg'); 
+INSERT INTO images 
+            (image_num, 
+             product_num, 
+             image_ref) 
+VALUES     (images_seq.NEXTVAL, 
+            20, 
+'/iceland/images/바론 글렌체크 싱글수트(Brown)/bgc_br$20$main$3.jpg'); 
+INSERT INTO images 
+            (image_num, 
+             product_num, 
+             image_ref) 
+VALUES     (images_seq.NEXTVAL, 
+            20, 
+'/iceland/images/바론 글렌체크 싱글수트(Brown)/bgc_br$20$detail$1.jpg'); 
+INSERT INTO images 
+            (image_num, 
+             product_num, 
+             image_ref) 
+VALUES     (images_seq.NEXTVAL, 
+            20, 
+'/iceland/images/바론 글렌체크 싱글수트(Brown)/bgc_br$20$detail$2.jpg'); 
 
 commit;
