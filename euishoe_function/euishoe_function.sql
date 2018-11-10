@@ -420,15 +420,15 @@ INSERT INTO deliveries
              order_date, 
              delivery_date, 
              delivery_status) 
-VALUES     (?, 
-            ?, 
-            ?, 
-            ?, 
-            ?, 
-            ?, 
-            ?, 
-            ?); 
-
+VALUES     (deliveries_seq.nextval, 
+            '경기도 용인시', 
+            '상일이',
+            '01066421489', 
+            '집 밖에 놔주세요', 
+            '20181109', 
+            '20181112', 
+            '배송중'); 
+select * from DELIVERIES;
 INSERT INTO payments 
             (payment_num, 
              payment_point, 
@@ -436,8 +436,8 @@ INSERT INTO payments
              payment_isrefund, 
              payment_discount, 
              payment_origin_cost, 
-             payment_origin_cost) 
-VALUES     (?, 
+             delivery_charge) 
+VALUES     (payments_seq.nextval, 
             ?, 
             ?, 
             ?, 
@@ -867,4 +867,35 @@ FROM   qnas;
 
 --no.55 홈페이지 관리자와 연락 가능한 기능
 
+--cart
+ SELECT c.cart_num            
+      	 FROM carts c INNER JOIN products p 
+                      ON c.product_code = p.product_code
+                INNER JOIN product_infos pi 
+                       ON p.product_num = pi.product_num;
+                       
+SELECT c.* ,p.*,pi.*               
+      	 FROM carts c INNER JOIN products p 
+                      		ON c.product_code = p.product_code
+                	  INNER JOIN product_infos pi 
+                       		ON p.product_num = pi.product_num;
 
+select o.* , d.*, p.* 
+from orders o join deliveries d
+  on o.DELIVERY_NUM = d.DELIVERY_NUM
+  join payments p
+  on o.PAYMENT_NUM = p.PAYMENT_NUM
+where o.ORDER_NUM = 1;
+
+select d.*
+from orders o join deliveries d
+  on o.DELIVERY_NUM = d.DELIVERY_NUM
+where o.order_num = 1;  
+
+select p.*
+from orders o join payments p
+  on o.PAYMENT_NUM = p.PAYMENT_NUM
+where o.ORDER_NUM = 1;
+
+select * from deliveries; 
+select * from payments;
